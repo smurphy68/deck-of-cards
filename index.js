@@ -32,8 +32,12 @@ class Card {
     }
 }
 
+// globs 
+let board = document.getElementById("board")
+let hand = document.getElementById("hand") // make global variables..?
 let cardsInOrder = [];
 const suits = ["&clubs;", "&spades;", "&hearts;", "&diams;"];
+
 let count = 0;
 for (let i = 0; i <= suits.length; i++) {
     for (let j = 2; j <= 14; j++) {
@@ -55,7 +59,6 @@ const toggle = (e) => {
     }
 }
 
-let board = document.getElementById("board");
 cardsInOrder.forEach((e) => {
     let tempDiv = document.createElement("div");
     tempDiv.setAttribute("id", `${e.position}`);
@@ -145,8 +148,6 @@ const orderElements = (parentId) => {
         return 0;
     });
 
-    console.log(childElements)
-
     childElements.forEach((childElement) => {
         parentElement.removeChild(childElement);
     });
@@ -155,3 +156,21 @@ const orderElements = (parentId) => {
         parentElement.appendChild(childElement);
     });
 };
+
+const drawSevenCards = () => {
+    // select seven elements in the board dom
+    let boardElements = Array.from(board.children)
+
+    for (let i = 0; i < 7 && boardElements.length > i; i++) {
+        boardElements[i].setAttribute("class", "hand-card")
+        hand.appendChild(boardElements[i]) // not 100% sure why this removes the element from board..?
+    }
+}
+
+const reset = () => {
+    Array.from(hand.children).forEach((child) => {
+        child.setAttribute("class", "board-card")
+        board.appendChild(child) // not 100% sure why this removes the element from board..?
+    })
+    orderElements("board")
+}

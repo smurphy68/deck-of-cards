@@ -8,10 +8,13 @@
 </head>
 <body>
     <div id="buttons" name="buttons">
+        <button type="button" id="reset" name="reset" onclick='reset()'>Reset the Board</button>
         <button type="button" id="shuffle-hand-button" name="shuffle-hand-button" onclick='shuffleElements("hand")'>Randomise Hand!</button>
         <button type="button" id="order-hand-button" name="order-hand-button" onclick='orderElements("hand")'>Order Hand</button>
         <button type="button" id="shuffle-deck-button" name="shuffle-deck-button" onclick='shuffleElements("board")'>Randomise Board!</button>
         <button type="button" id="order-deck-button" name="order-deck-button" onclick='orderElements("board")'>Order Board</button>
+        <button type="button" id="draw-seven-button" name="draw-seven-button" onclick='drawSevenCards()'>Draw Seven Cards</button>
+
     </div>
     <div id="hand" name="hand" class="x-by-x-grid"></div>
     <div id="board" name="board" class="x-by-x-grid"></div>
