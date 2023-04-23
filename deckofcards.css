@@ -1,9 +1,11 @@
+/* grid setup for board and hand */
 .x-by-x-grid {
     display: grid;
     grid-template-columns: repeat(13, 1fr);
     max-width: 150px;
 }
 
+/* styling for card parent elements */
 .board-card {
     margin: 5px;
     text-align: left;
@@ -26,6 +28,7 @@
     cursor: pointer;
 }
 
+/* styling for cards sub-elements */
 .suit {
     text-align: center;
     font-size: 52;
