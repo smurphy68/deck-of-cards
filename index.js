@@ -34,7 +34,7 @@ class Card {
 
 // global variables
 let board = document.getElementById("board")
-let hand = document.getElementById("hand") // make global variables..?
+let hand = document.getElementById("hand")
 let cardsInOrder = [];
 const suits = ["&clubs;", "&spades;", "&hearts;", "&diams;"];
 
