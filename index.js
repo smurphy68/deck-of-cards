@@ -39,7 +39,7 @@ let cardsInOrder = [];
 const suits = ["&clubs;", "&spades;", "&hearts;", "&diams;"];
 
 let count = 0;
-for (let i = 0; i <= suits.length; i++) {
+for (let i = 0; i < suits.length; i++) {
     for (let j = 2; j <= 14; j++) {
         cardsInOrder[count] = new Card(suits[i % 4], j, count);
         count += 1;
